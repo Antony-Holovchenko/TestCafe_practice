@@ -1,0 +1,27 @@
+{
+  "name": "testcafe_practice",
+  "version": "1.0.0",
+  "description": "My practice example with TestCafe tool",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "testcafe chrome:headless ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antony-Holovchenko/TestCafe_practice.git"
+  },
+  "keywords": [
+    "TestCafe"
+  ],
+  "author": "Anton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antony-Holovchenko/TestCafe_practice/issues"
+  },
+  "homepage": "https://github.com/Antony-Holovchenko/TestCafe_practice#readme",
+  "dependencies": {
+    "prettier": "^2.7.1",
+    "testcafe": "^1.20.1",
+    "testcafe-reporter-list": "^2.1.0"
+  }
+}
