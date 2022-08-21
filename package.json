@@ -4,7 +4,8 @@
   "description": "My practice example with TestCafe tool",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "testcafe chrome:headless ./tests"
+    "test:chrome": "testcafe chrome:headless ./tests",
+    "test:multiple": "testcafe chrome,firefox ./tests"
   },
   "repository": {
     "type": "git",
