@@ -25,7 +25,7 @@ class RegistrationPage{
         this.submitAccountBtn = Selector('#submitAccount')
         this.accountBtn = Selector('.account')
         this.logoutButton = Selector('.logout')
-        this.errorWindow = Selector('.alert-danger')
+        this.errorMessage = Selector('.alert-danger')
     }
 
 
