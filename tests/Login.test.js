@@ -1,13 +1,15 @@
+require('dotenv').config()
+const baseUrl = process.env.BASE_URL
 import Login from "../page-objects/LoginPage";
 const login = new Login()
 
 fixture `Login test`
-    .page('http://automationpractice.com/index.php')
+    .page (baseUrl)
 
 test('Login with valid credentials', async t => {
     await login.Login('JohnDoe11@gmail.com', '123456John')
     await t.expect(login.account.innerText).contains('John'+' '+'Doe')
-    await t.expect(login.navMyAccount.exists).ok()
+    await t.expect(login.navMyAccount.exists).ok() 
 })
 
 test('Login with unregistered user(invalid credentials)', async t => {

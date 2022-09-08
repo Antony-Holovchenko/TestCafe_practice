@@ -1,8 +1,12 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
+const baseUrl = process.env.BASE_URL!;
 import searchPage from "../page-objects/SearchPage";
 const search = new searchPage
 
+
 fixture `Testing search functionality with different items`
-    .page('http://automationpractice.com/index.php')
+    .page(baseUrl)
     
 test('Shop should have 5 dresses on the page', async t => {
     await search.Search(t, 'Printed Dress')

@@ -1,8 +1,10 @@
+require('dotenv').config()
+const baseUrl = process.env.BASE_URL
 import RegistrationPage from "../page-objects/RegistrationPage";
 const registerPage = new RegistrationPage()
 
 fixture `Testing registration flow`
-    .page('http://automationpractice.com/index.php')
+    .page(baseUrl)
     .beforeEach(async t => {
         //await t.setTestSpeed(0.1)
     })
