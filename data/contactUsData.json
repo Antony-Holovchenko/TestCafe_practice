@@ -1,0 +1,42 @@
+[
+ {
+    "testName": "Send contact us form with valid data",
+    "email": "johnDoe11@gmail.com",
+    "orderReference": "123435",
+    "attachedFile": "../data/test.jpg",
+    "messageText": "I don't see order in the order cart",
+    "expectedresult": "Your message has been successfully sent to our team."
+ },
+ {  
+   "testName": "Send contact us form with invalid email",
+    "email": "PeterSmithgmail.com",
+    "orderReference": "979973",
+    "attachedFile": "../data/test.jpg",
+    "messageText": "How I can delete an item from my cart",
+    "expectedresult": "Invalid email address."
+
+ },
+ {
+    "testName": "Send contact us form without message",
+    "email": "Kate344@gmail.com",
+    "orderReference": "541006",
+    "attachedFile": "../data/test.jpg",
+    "messageText":"Thank you for your attention",
+    "expectedresult": "The message cannot be blank."
+ },
+ {
+   "testName": "Send contact us form without email",
+   "email": "Jenifer6@gmail.com",
+   "orderReference": "555434",
+   "attachedFile": "../data/test.jpg",
+   "messageText":"How can I track my delivery?",
+   "expectedresult": "Invalid email address."
+},
+{
+   "testName": "Send contact us form with valid data",
+   "email": "johnDoe11@gmail.com",
+   "messageText": "I don't see order in the order cart",
+   "expectedresult": "Your message has been successfully sent to our team."
+}
+ 
+]

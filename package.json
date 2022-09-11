@@ -6,7 +6,8 @@
   "scripts": {
     "test:chrome:headless": "testcafe chrome:headless ./tests -r spec-time",
     "test:chrome": "testcafe chrome ./tests",
-    "test:multiple": "testcafe chrome,firefox ./tests"
+    "test:multiple": "testcafe chrome,firefox ./tests",
+    "test:data:driven": "testcafe chrome ./tests/contactUs.test.ts"
   },
   "keywords": [
     "TestCafe"
