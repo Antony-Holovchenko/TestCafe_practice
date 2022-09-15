@@ -1,0 +1,41 @@
+{
+    "test1": {
+        "testName": "Successful registration with valid data",
+        "firstName": "John",
+        "lastName": "Doe",
+        "password": "123123Do",
+        "address": "Washington street 43",
+        "city": "New York",
+        "zip": "66545",
+        "phone": "+380777777777",
+        "expectedResult": "John Doe"
+    },
+
+    "test2": {
+        "testName": "Registration without required fields (phone number and city)",
+        "firstName": "John",
+        "lastName": "Doe",
+        "password": "123123Do",
+        "address": "Washington street 43",
+        "zip": "69103",
+        "expectedResult": "There are 2 errors"
+    },
+    "test3": {
+        "testName": "Registration with invalid data",
+        "firstName": "55",
+        "lastName": "D55oe",
+        "password": "0",
+        "address": "Washington street 43",
+        "city": "New York",
+        "zip": "66545",
+        "phone": "+380777777777",
+        "expectedResult1": "lastname is invalid.",
+        "expectedResult2": "firstname is invalid.",
+        "expectedResult3": "passwd is invalid."
+    },
+    "test4": {
+        "testName": "Registration with with existing user",
+        "email": "johnDoe11@gmail.com",
+        "expectedResult": "An account using this email address has already been registered. Please enter a valid password or request a new one."
+    }
+}

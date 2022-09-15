@@ -2,30 +2,31 @@ require('dotenv').config()
 const baseUrl = process.env.BASE_URL
 import Login from "../page-objects/LoginPage";
 const login = new Login()
+import Data from "../data/loginData.json"
 
 fixture `Login test`
     .page (baseUrl)
 
-test('Login with valid credentials', async t => {
-    await login.Login('JohnDoe11@gmail.com', '123456John')
-    await t.expect(login.account.innerText).contains('John'+' '+'Doe')
+test(Data.test1.testName, async t => {
+    await login.Login(Data.test1.email, Data.test1.password)
+    await t.expect(login.myaAccount.innerText).contains(Data.test1.expectedResult)
     await t.expect(login.navMyAccount.exists).ok() 
 })
 
-test('Login with unregistered user(invalid credentials)', async t => {
-    await login.Login('peterParker@gmail.com', '%hu&Jo(0')
-    await t.expect(login.errorMessage.innerText).contains('Authentication failed.')
+test(Data.test2.testName, async t => {
+    await login.Login(Data.test2.email, Data.test2.password)
+    await t.expect(login.errorMessage.innerText).contains(Data.test2.expectedResult)
     await t.expect(login.signInBtn.exists).ok()
 })
 
-test('Login with missing email', async t => {
-    await login.invalidLoginMissedEmail('123123@yhy')
-    await t.expect(login.errorMessage.innerText).contains('An email address required.')
+test(Data.test3.testName, async t => {
+    await login.invalidLoginMissedEmail(Data.test3.expectedResult)
+    await t.expect(login.errorMessage.innerText).contains(Data.test3.expectedResult)
     await t.expect(login.signInBtn.exists).ok()
 })
 
-test('Login with missing password', async t => {
-    await login.invalidLoginMissedPswrd('peter22@gmail.com')
-    await t.expect(login.errorMessage.innerText).contains('Password is required.')
+test(Data.test4.testName, async t => {
+    await login.invalidLoginMissedPswrd(Data.test4.email)
+    await t.expect(login.errorMessage.innerText).contains(Data.test4.expectedResult)
     await t.expect(login.signInBtn.exists).ok()
-})
+}) 

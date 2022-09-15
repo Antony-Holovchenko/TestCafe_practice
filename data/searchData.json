@@ -1,0 +1,25 @@
+{
+    "test1": {
+        "testName": "Shop should have 5 dresses on the page",
+        "searchItem": "Printed Dress",
+        "expectedResult": "5 results have been found."
+    },
+
+    "test2": {
+        "testName": "Shop should have only 1 t-shirt item",
+        "searchItem": "T-shirt",
+        "expectedResult": "1 result has been found."
+    },
+    "test3": {
+        "testName": "Shop should have only 1 blouse item",
+        "searchItem": "Blouse",
+        "expectedResult": "1 result has been found."
+    },
+    "test4": {
+        "testName": "User should see an error-message after incorrect search",
+        "searchItem": "Trousers",
+        "expectedResult1": "0 results have been found.",
+        "expectedResult2": "No results were found for your search"
+ 
+    }
+}

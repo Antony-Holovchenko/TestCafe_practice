@@ -66,6 +66,13 @@ class RegistrationPage{
             .typeText(this.userZipCode, Zip, {paste: true})
             .click(this.submitAccountBtn)
     }
+
+    async RegistrWithExistingUser(email){
+        await t
+            .click(this.signInbutton)
+            .typeText(this.emailField, email)
+            .pressKey('enter')
+    }
 }
 
 export default RegistrationPage

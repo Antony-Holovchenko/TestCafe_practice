@@ -1,0 +1,24 @@
+{
+        "test1" :{
+            "testName": "Login with valid credentials",
+            "email": "JohnDoe11@gmail.com",
+            "password": "123456John",
+            "expectedResult": "Welcome to your account. Here you can manage all of your personal information and orders."
+        },
+        "test2" :{
+            "testName":"Login with unregistered user(invalid credentials)",
+            "email": "peterParker@gmail.com",
+            "password":"%hu&Jo(0",
+            "expectedResult": "Authentication failed."
+        },
+        "test3" :{
+            "testName":"Login with missing email",
+            "password":"123123@yhy",
+            "expectedResult": "An email address required."
+        },
+        "test4" :{
+            "testName":"Login with valid credentials",
+            "email": "peter22@gmail.com",
+            "expectedResult": "Password is required."
+        }
+}

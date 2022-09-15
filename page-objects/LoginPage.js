@@ -6,7 +6,7 @@ class Login extends RegistrationPage{
         super()
         this.email = Selector('#email')
         this.signInBtn = Selector('#SubmitLogin')
-        this.account = Selector('.account')
+        this.myaAccount = Selector('.info-account')
         this.navMyAccount = Selector('.navigation_page')
     }
 

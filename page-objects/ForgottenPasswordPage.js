@@ -18,5 +18,13 @@ class forgotPassword extends RegistrationPage {
             .typeText(this.email, email)
             .pressKey('enter')
     }
+
+    async sendLinkWithoutEmail(){
+        await t
+            .click(this.signInbutton)
+            .click(this.forgotPasswordBtn)
+            .click(this.email)
+            .pressKey('enter')
+    }
 }
 export default forgotPassword
