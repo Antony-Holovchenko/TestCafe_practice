@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Peter",
+        "job": "IOS-developer"
+    },
+    {
+        "name": "sara",
+        "job": "Recruiter"
+    },
+    {
+        "name": "Ben-Jack",
+        "job": "Js-developer"
+    },
+    {
+        "name": "viktor",
+        "job": "Devops"
+    },
+    {
+        "name": "Stepan",
+        "job": "Product Owner"
+    }
+]

@@ -1,5 +1,5 @@
 import {Selector, t} from "testcafe"
-import {randomNumber} from '../helpers'
+import {randomNumber} from '../../helpers'
 
 
 class RegistrationPage{
@@ -72,6 +72,7 @@ class RegistrationPage{
             .click(this.signInbutton)
             .typeText(this.emailField, email)
             .pressKey('enter')
+            .wait(2000)
     }
 }
 

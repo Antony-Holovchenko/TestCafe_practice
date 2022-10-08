@@ -1,10 +1,9 @@
+import contactUsForm from "../page-objects/objectsUsual/contactUsPage";
+const contactUs = new contactUsForm
+const TestSet = require('../data/tests_data/contactUsData.json')
 import * as dotenv from 'dotenv'
 dotenv.config()
 const baseUrl = process.env.BASE_URL!;
-import contactUsForm from "../page-objects/contactUsPage";
-const contactUs = new contactUsForm
-const TestSet = require('../data/contactUsData.json')
-
 
 fixture `Testing the contact us page`
     .page(baseUrl)
@@ -14,7 +13,7 @@ fixture `Testing the contact us page`
   
   
   TestSet.forEach(data => {
-    test.only(data.testName , async t => {
+    test(data.testName , async t => {
 
         await contactUs.sendValidForm(t, data.email, data.orderReference, data.attachedFile, data.messageText)
         if (await contactUs.errorMessage.exists) {

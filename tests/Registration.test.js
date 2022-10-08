@@ -1,8 +1,8 @@
+import RegistrationPage from "../page-objects/objectsUsual/RegistrationPage";
+const registerPage = new RegistrationPage()
+import Data from "../data/tests_data/registrationData.json"
 require('dotenv').config()
 const baseUrl = process.env.BASE_URL
-import RegistrationPage from "../page-objects/RegistrationPage";
-const registerPage = new RegistrationPage()
-import Data from "../data/registrationData.json"
 
 fixture `Testing registration flow`
     .page(baseUrl)
@@ -13,14 +13,14 @@ fixture `Testing registration flow`
 test(Data.test1.testName, async t => {
     await registerPage.Registration(Data.test1.firstName, Data.test1.lastName, Data.test1.password, Data.test1.address, Data.test1.city, Data.test1.zip, Data.test1.phone)
     await t.expect(registerPage.accountBtn.innerText).contains(Data.test1.expectedResult)
-    await t.expect(registerPage.signInbutton.exists).notOk()
-    await t.expect(registerPage.logoutButton.exists).ok()
+           .expect(registerPage.signInbutton.exists).notOk()
+           .expect(registerPage.logoutButton.exists).ok()
 })
 
 test(Data.test2.testName, async t => {
     await registerPage.RegistrationInvalid(Data.test2.firstName, Data.test2.lastName, Data.test2.password, Data.test2.address, Data.test2.zip)
     await t.expect(registerPage.errorMessage.innerText).contains(Data.test2.expectedResult)
-    await t.expect(registerPage.submitAccountBtn.exists).ok()
+           .expect(registerPage.submitAccountBtn.exists).ok()
 })
 
 test(Data.test3.testName, async t => {

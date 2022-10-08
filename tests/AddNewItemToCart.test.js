@@ -1,7 +1,7 @@
+import newItemInCart from "../page-objects/objectsUsual/AddItemToCartPage"
+const addNewItem = new newItemInCart()
 require('dotenv').config()
 const baseUrl = process.env.BASE_URL
-import newItemInCart from "../page-objects/AddItemToCartPage"
-const addNewItem = new newItemInCart()
 
 fixture `Testing functionality of adding/deleting new items to/from shopping cart`
     .page(baseUrl)
@@ -12,16 +12,14 @@ fixture `Testing functionality of adding/deleting new items to/from shopping car
 
 test('Adding 2 new items to cart', async t => {
     await addNewItem.addingItem()
-
     await t.expect(addNewItem.total.innerText).eql('$34.91')
-    await t.expect(addNewItem.headCount.innerText).contains('Your shopping cart contains: 2 Products')
+           .expect(addNewItem.headCount.innerText).contains('Your shopping cart contains: 2 Products')
 })
 
 
 test('Delete added previously items from shopping cart', async t => {
     await addNewItem.addItem2()
-
     await t.expect(addNewItem.alert.innerText).eql('Your shopping cart is empty.')
-    await t.expect(addNewItem.headerShopCart.exists).ok()
-    await t.expect(addNewItem.total.exists).notOk()
+           .expect(addNewItem.headerShopCart.exists).ok()
+           .expect(addNewItem.total.exists).notOk()
 })
